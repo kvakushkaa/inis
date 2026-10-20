@@ -1,0 +1,42 @@
+.selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #d7e3df;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.control {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: #f3f7f6;
+  color: var(--color-ink);
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.control:hover:not(:disabled) {
+  background: #e4eeeb;
+}
+
+.control:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.value {
+  min-width: 28px;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-ink);
+}

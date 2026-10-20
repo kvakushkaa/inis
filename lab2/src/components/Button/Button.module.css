@@ -1,0 +1,57 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.button:not(.disabled):hover {
+  transform: translateY(-1px);
+}
+
+.button:not(.disabled):active {
+  transform: translateY(0);
+}
+
+.addToCart {
+  background: var(--color-brand);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.22);
+}
+
+.addToCart:not(.disabled):hover {
+  background: var(--color-brand-strong);
+}
+
+.buyNow {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  box-shadow: 0 8px 18px rgba(245, 158, 11, 0.28);
+}
+
+.buyNow:not(.disabled):hover {
+  filter: brightness(0.96);
+}
+
+.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
