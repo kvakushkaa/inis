@@ -1,0 +1,22 @@
+.catalog {
+  width: 100%;
+}
+
+.catalog-header h2 {
+  margin: 0 0 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  color: var(--color-ink);
+}
+
+.catalog-header p {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  font-family: 'Manrope', sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}

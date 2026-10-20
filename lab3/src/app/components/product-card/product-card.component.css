@@ -1,0 +1,140 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #dce8e4;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.media {
+  position: relative;
+  min-height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.55);
+  color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.media-overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.78) 100%);
+  color: #ffffff;
+}
+
+.media-title {
+  margin: 0 0 4px;
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.media-description {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-muted);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rating img {
+  width: 16px;
+  height: 16px;
+}
+
+.price {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-brand-strong);
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.btn-cart {
+  background: var(--color-brand);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 118, 110, 0.22);
+}
+
+.btn-buy {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  box-shadow: 0 8px 18px rgba(245, 158, 11, 0.28);
+}

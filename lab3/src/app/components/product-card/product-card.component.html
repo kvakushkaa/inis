@@ -1,0 +1,34 @@
+<article class="card" *ngIf="product">
+  <div
+    class="media"
+    [style.background-image]="
+      'linear-gradient(160deg, ' + (product.accent || '#0F766E') + ' 0%, #0f172a 100%), url(' + product.imageUrl + ')'
+    "
+  >
+    <span class="category" *ngIf="product.category">{{ product.category }}</span>
+    <div class="media-overlay">
+      <h3 class="media-title">{{ product.name }}</h3>
+      <p class="media-description" *ngIf="product.description">{{ product.description }}</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="header">
+      <h3 class="title">{{ product.name }}</h3>
+      <div class="rating">
+        <img src="assets/icons/star.svg" alt="" aria-hidden="true" />
+        <span>{{ product.rating | number: '1.1-1' }}</span>
+      </div>
+    </div>
+
+    <p class="price">{{ product.price | number: '1.2-2' }} Br</p>
+
+    <div class="actions">
+      <button type="button" class="btn btn-cart">
+        <img src="assets/icons/cart.svg" alt="" aria-hidden="true" />
+        Add to Cart
+      </button>
+      <button type="button" class="btn btn-buy">Buy Now</button>
+    </div>
+  </div>
+</article>
