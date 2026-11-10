@@ -1,0 +1,24 @@
+{
+  "name": "digivault-lab8",
+  "version": "1.0.0",
+  "description": "DigiVault REST API — Express + MongoDB (ЛР8, вариант 3)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node src/seed.js"
+  },
+  "keywords": ["express", "mongodb", "mongoose", "digivault"],
+  "author": "Baidan N.A.",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.1.9"
+  }
+}

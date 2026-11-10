@@ -1,0 +1,35 @@
+[
+    {
+        "_id": "6af072e308131e9d152b81e5",
+        "name": "UI Kit Pro",
+        "price": 89,
+        "imageUrl": "/products/ui-kit-pro.png",
+        "description": "Design system pack",
+        "category": "UI KIT",
+        "__v": 0,
+        "createdAt": "2026-11-08T13:02:27.848Z",
+        "updatedAt": "2026-11-08T13:02:27.848Z"
+    },
+    {
+        "_id": "6af072e308131e9d152b81e6",
+        "name": "Icon Bundle 240",
+        "price": 35,
+        "imageUrl": "/products/icon-bundle.png",
+        "description": "Vector icon set",
+        "category": "ICONS",
+        "__v": 0,
+        "createdAt": "2026-11-08T13:02:27.848Z",
+        "updatedAt": "2026-11-08T13:02:27.848Z"
+    },
+    {
+        "_id": "6af072e308131e9d152b81e7",
+        "name": "Synthwave Presets",
+        "price": 55,
+        "imageUrl": "/products/synthwave.png",
+        "description": "Audio preset pack",
+        "category": "AUDIO",
+        "__v": 0,
+        "createdAt": "2026-11-08T13:02:27.848Z",
+        "updatedAt": "2026-11-08T13:02:27.848Z"
+    }
+]
