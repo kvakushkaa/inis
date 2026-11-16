@@ -1,0 +1,70 @@
+.panel {
+  border: 1px solid #d7e3df;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.heading {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.badge {
+  border-radius: 999px;
+  background: #f59e0b;
+  color: #0f172a;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+.empty {
+  color: #475569;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+}
+
+.item {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f3f7f6;
+}
+
+.name {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.meta {
+  color: #475569;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+}
+
+.remove,
+.clear {
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.remove {
+  background: #ffffff;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+
+.clear {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.total {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #115e59;
+}

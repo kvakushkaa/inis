@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigiVault — a11y BEFORE (нарушения WCAG)</title>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 24px; background: #eef4f2; color: #0f172a; }
+      .card { background: #fff; border: 1px solid #dce8e4; border-radius: 12px; padding: 16px; max-width: 360px; }
+      /* Намеренно низкий контраст цены (~1.7:1) */
+      .price { color: #5eead4; font-size: 22px; font-weight: 700; }
+      .modal-backdrop {
+        position: fixed; inset: 0; background: rgba(0,0,0,.4);
+        display: none; place-items: center;
+      }
+      .modal-backdrop.is-open { display: grid; }
+      .modal { background: #fff; padding: 20px; width: min(420px, 90vw); border-radius: 12px; }
+      button { margin-right: 8px; }
+    </style>
+  </head>
+  <body>
+    <h1>Каталог DigiVault (до исправлений)</h1>
+    <div class="card">
+      <div>UI Kit Pro</div>
+      <div class="price" id="price">89.00 Br</div>
+      <button id="open">Быстрый просмотр</button>
+      <button>Добавить в корзину</button>
+    </div>
+
+    <!-- Модалка без role=dialog, без Esc, без focus trap -->
+    <div id="modal" class="modal-backdrop" aria-hidden="true">
+      <div class="modal">
+        <div>UI Kit Pro</div>
+        <p>Design system pack</p>
+        <button id="add">Добавить</button>
+        <button id="close">Закрыть</button>
+      </div>
+    </div>
+
+    <script>
+      const modal = document.getElementById('modal');
+      document.getElementById('open').onclick = () => {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+      };
+      document.getElementById('close').onclick = () => {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+      };
+      // нет Escape, нет focus trap, нет ARIA dialog
+    </script>
+  </body>
+</html>
