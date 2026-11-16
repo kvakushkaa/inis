@@ -1,0 +1,16 @@
+{
+  "name": "digivault-lab12",
+  "private": true,
+  "version": "1.0.0",
+  "description": "DigiVault ЛР12 — analytics Line Chart (Plotly)",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "start": "npm start --prefix server",
+    "demo:screenshot": "node scripts/capture-analytics.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.1"
+  }
+}

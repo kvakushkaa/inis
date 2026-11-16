@@ -1,0 +1,21 @@
+{
+  "name": "digivault-lab12-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 51712 --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --port 51712 --host 127.0.0.1"
+  },
+  "dependencies": {
+    "plotly.js-dist-min": "^2.35.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.0"
+  }
+}
