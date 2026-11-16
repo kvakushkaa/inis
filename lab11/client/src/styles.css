@@ -1,0 +1,126 @@
+:root {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #0f172a;
+  background: #eef4f2;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+
+.app {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #d7e3df;
+  border-radius: 14px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.brandName {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.brandTagline {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  border: 1px solid #d7e3df;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  background: #f3f7f6;
+}
+
+.iconButton img {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+h1 { margin: 0 0 6px; font-size: 28px; }
+.lead { margin: 0; color: #475569; }
+
+.card {
+  margin-top: 20px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #d7e3df;
+  border-radius: 14px;
+}
+
+label { display: block; margin: 10px 0 4px; font-weight: 600; }
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font: inherit;
+}
+
+form button[type="submit"] {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #0f766e;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.review {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.meta { color: #64748b; font-size: 13px; margin-bottom: 4px; }
+.status { margin-top: 10px; color: #0f766e; font-weight: 600; }
+.error { color: #b45309; }

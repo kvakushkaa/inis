@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigiVault — XSS ПОСЛЕ защиты</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 720px; margin: 32px auto; padding: 0 16px; background: #eef4f2; color: #0f172a; }
+      h1 { font-size: 22px; }
+      .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #bbf7d0; color: #14532d; font-size: 12px; font-weight: 700; }
+      label { display: block; margin: 12px 0 4px; font-weight: 600; }
+      input, textarea { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; }
+      button { margin-top: 12px; padding: 10px 16px; border: 0; border-radius: 10px; background: #0f766e; color: #fff; font-weight: 700; cursor: pointer; }
+      .review { margin-top: 16px; padding: 14px; background: #fff; border: 1px solid #d7e3df; border-radius: 12px; }
+      .meta { color: #64748b; font-size: 13px; }
+      code { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
+      .ok { color: #166534; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <p class="badge">ЗАЩИЩЕНО · sanitize-html + textContent</p>
+    <h1>Отзыв о товаре UI Kit Pro (после защиты)</h1>
+    <p>
+      Та же XSS-нагрузка отправляется на <code>POST /api/reviews</code> (sanitization).
+      Ответ рендерится через <code>textContent</code> — скрипт не выполняется.
+    </p>
+    <p class="ok" id="status">Ожидание отправки…</p>
+
+    <form id="form">
+      <label for="author">Автор</label>
+      <input id="author" value="Гость" required />
+
+      <label for="text">Отзыв о товаре</label>
+      <textarea id="text" rows="4" required>Отличный UI Kit! &lt;img src=x onerror="alert('XSS PoC')"&gt;</textarea>
+
+      <button type="submit">Отправить отзыв</button>
+    </form>
+
+    <h2>Список отзывов (безопасный рендер)</h2>
+    <div id="list"></div>
+
+    <script src="./xss-after.js"></script>
+  </body>
+</html>

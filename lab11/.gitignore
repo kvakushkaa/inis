@@ -1,0 +1,10 @@
+node_modules/
+server/node_modules/
+client/node_modules/
+server/.env
+server/.mongo-binaries/
+client/dist/
+screenshots/
+.DS_Store
+playwright-report/
+test-results/

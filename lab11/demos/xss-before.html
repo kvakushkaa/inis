@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigiVault — XSS ДО защиты (уязвимый отзыв)</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 720px; margin: 32px auto; padding: 0 16px; background: #eef4f2; color: #0f172a; }
+      h1 { font-size: 22px; }
+      .badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #fecaca; color: #7f1d1d; font-size: 12px; font-weight: 700; }
+      label { display: block; margin: 12px 0 4px; font-weight: 600; }
+      input, textarea { width: 100%; box-sizing: border-box; padding: 10px; border: 1px solid #cbd5e1; border-radius: 10px; }
+      button { margin-top: 12px; padding: 10px 16px; border: 0; border-radius: 10px; background: #0f766e; color: #fff; font-weight: 700; cursor: pointer; }
+      .review { margin-top: 16px; padding: 14px; background: #fff; border: 1px solid #d7e3df; border-radius: 12px; }
+      .meta { color: #64748b; font-size: 13px; }
+      code { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
+    </style>
+  </head>
+  <body>
+    <p class="badge">УЯЗВИМО · innerHTML без sanitization</p>
+    <h1>Отзыв о товаре UI Kit Pro (до защиты)</h1>
+    <p>
+      Поле «Отзыв» вставляется через <code>innerHTML</code>. Попробуйте нагрузку:
+      <code>&lt;img src=x onerror=alert('XSS PoC')&gt;</code>
+    </p>
+
+    <form id="form">
+      <label for="author">Автор</label>
+      <input id="author" value="Гость" required />
+
+      <label for="text">Отзыв о товаре</label>
+      <textarea id="text" rows="4" required>Отличный UI Kit! &lt;img src=x onerror="alert('XSS PoC')"&gt;</textarea>
+
+      <button type="submit">Отправить отзыв</button>
+    </form>
+
+    <p id="xss-flag" style="display:none;padding:12px 14px;border-radius:10px;background:#7f1d1d;color:#fff;font-weight:700;">
+      XSS PoC executed — вредоносный скрипт сработал
+    </p>
+
+    <h2>Список отзывов</h2>
+    <div id="list"></div>
+
+    <script>
+      const list = document.getElementById('list');
+      const reviews = [];
+
+      window.__markXss = function markXss() {
+        const flag = document.getElementById('xss-flag');
+        flag.style.display = 'block';
+        flag.dataset.fired = '1';
+      };
+
+      function render() {
+        // УЯЗВИМОСТЬ: пользовательский HTML без очистки
+        list.innerHTML = reviews
+          .map(
+            (r) =>
+              `<article class="review"><div class="meta">${r.author}</div><div class="body">${r.text}</div></article>`,
+          )
+          .join('');
+      }
+
+      document.getElementById('form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const author = document.getElementById('author').value;
+        // onerror вызывает и визуальный флаг, и alert (для PoC)
+        const text = document.getElementById('text').value.replace(
+          "alert('XSS PoC')",
+          "window.__markXss();alert('XSS PoC')",
+        );
+
+        await fetch('/api/reviews/vulnerable', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ productId: 'ui-kit-pro', author, text }),
+        });
+
+        reviews.unshift({ author, text });
+        render();
+      });
+    </script>
+  </body>
+</html>
